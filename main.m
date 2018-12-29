@@ -19,7 +19,7 @@ thr=10;  %指定阈值
 [ca1,ch1,cv1,cd1]=dwt2(src,'haar');
 res0=idwt2(ca1,ch1,cv1,cd1,'haar');  %直接重构的无损对照组
 subplot(1,3,2);
-imshow(uint8(res0))  %等价于imshow(res0/255)，double类型被认为在使用imshow时被认为在[0,1]内
+imshow(uint8(res0))  %等价于imshow(res0/255)，double类型在使用imshow时被认为在[0,1]内
 title ('无损重构(对照组)');
 %对一级变换的低频信息进行二级变换
 [ca2,ch2,cv2,cd2]=dwt2(ca1,'haar');
